@@ -13,4 +13,4 @@ https://downloads.openmicroscopy.org/bio-formats/5.3.4/
 * *StomachbCol.m* quantifies the Trop2 signal in individual glands 
 * *StomachGSIICD.m* quantifies the overlap between GSII and CD44v signals 
 
-The *sampleImages.zip* file contains 4 image files in .czi format and one matlab .mat file that can be used as inputs for the scripts.
+The *sampleImages* folder contains 4 image files in .czi format and one matlab .mat file that can be used as inputs for the scripts.
