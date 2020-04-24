@@ -8,9 +8,9 @@ The image data has been acquired on a Zeiss LSM 780 laser-scanning confocal micr
 The following scripts invoke the MATLAB bioformat readers package (bfmatlab) that can be downloaded at:
 https://downloads.openmicroscopy.org/bio-formats/5.3.4/
 
-StomachCytoK.m quantifies the GSII and Ki67 markers when cytokeratin signal is present
-StomachCytoKnoK.m quantifies the GSII and Ki67 markers when the cytokeratin signal is too dim or absent
-StomachbCol.m quantifies the Trop2 signal in individual glands
-StomachGSIICD.m quantifies the overlap between GSII and CD44v signals
+* *StomachCytoK.m* quantifies the GSII and Ki67 markers when cytokeratin signal is present 
+* *StomachCytoKnoK.m* quantifies the GSII and Ki67 markers when the cytokeratin signal is too dim or absent 
+* *StomachbCol.m* quantifies the Trop2 signal in individual glands 
+* *StomachGSIICD.m* quantifies the overlap between GSII and CD44v signals 
 
-The "sampleImages.zip" file contains 4 image files in .czi format and one matlab .mat file that can be used as inputs for the scripts.
+The *sampleImages.zip* file contains 4 image files in .czi format and one matlab .mat file that can be used as inputs for the scripts.
