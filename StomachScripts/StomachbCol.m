@@ -70,6 +70,10 @@ NOM=movmean(nob,100);
 [~, ip]=max(hp);
 TH=pp(ip);
 
+if isempty(TH)
+TH=1;
+end
+
 FWW=C2mtb>=TH;
 FWWa=bwareaopen(FWW,500);
 h2=fspecial('average',[5 2]);
@@ -91,6 +95,7 @@ np=1:numel(Se);
 dval=[m I np'];
 tf=m>200;
 dval(tf,:)=[];
+if ~isempty(dval)
 dvals=sortrows(dval,1);
 dvals(end,:)=[];
 [~, Ia, ~]=unique(dvals(:,2));
@@ -107,6 +112,7 @@ end
 bw2=bwmorph(bw2,'diag');
 FWWaf=FWWaf | bw2;
 close;
+end
 %
 
 rFWWaf=imclearborder(~FWWaf);
