@@ -12,5 +12,6 @@ https://downloads.openmicroscopy.org/bio-formats/5.3.4/
 * *StomachCytoKnoK.m* quantifies the GSII and Ki67 markers when the cytokeratin signal is too dim or absent 
 * *StomachbCol.m* quantifies the Trop2 signal in individual glands 
 * *StomachGSIICD.m* quantifies the overlap between GSII and CD44v signals 
+* *minminT.m* is an auxilliary function used to substract background
 
 The *sampleImages* folder contains 4 image files in .czi format and one matlab .mat file that can be used as inputs for the scripts.
