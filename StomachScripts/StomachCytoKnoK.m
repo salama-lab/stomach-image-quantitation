@@ -28,9 +28,9 @@ D=IS{1,1}{1,1}; %DAPI
 
 G=IS{1,1}{2,1}; %CytoK
 
-R=IS{1,1}{3,1}; %Ki67
+R=IS{1,1}{4,1}; %Ki67 (or tuft)
 
-FR=IS{1,1}{4,1}; %GSII
+FR=IS{1,1}{3,1}; %GSII
 
 % intitialize Flag. 1 if OK, 0 if DAPI area too small (<1/4 of image size)
 % or if area of Ki67 signal too large (a hint that it is only background)
@@ -73,8 +73,10 @@ Rm=medfilt2(R);
 
 RmWf=imbinarize(Rm);
 RmWf=bwareaopen(RmWf,10);
-RmWfw=Nuclear2(RmWf);
-RmWfw=bwareaopen(RmWfw,3);
+RmWff=imfill(RmWf,'holes');
+RmWfw=imopen(RmWff,strel('disk',2));
+% RmWfw=Nuclear2(RmWf);
+% RmWfw=bwareaopen(RmWfw,3);
 KiCover=numel(find(RmWf(:)))/numel(find(DWf(:))); %determine fractional coverage of Ki staining
 
 if KiCover>0.2 %probably all background due to absence of specific signal
@@ -83,8 +85,11 @@ if KiCover>0.2 %probably all background due to absence of specific signal
     Rmb=Rm-1.5*tb;
     RmWf=imbinarize(Rmb);
     RmWf=bwareaopen(RmWf,10);
-    RmWfw=Nuclear2(RmWf);
-    RmWfw=bwareaopen(RmWfw,3);
+    RmWff=imfill(RmWf,'holes');
+    RmWfw=imopen(RmWff,strel('disk',2));
+    %RmWfw=Nuclear2(RmWf);
+    %RmWfw=bwareaopen(RmWfw,3);
+    KiCover=numel(find(RmWf(:)))/numel(find(DWf(:)));
 end
 
 %% Compute metrics
